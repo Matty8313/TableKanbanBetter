@@ -11,16 +11,6 @@ function App(props) {
   const [ilo, setIlo] = useState([]);
   const [idek, setIdek] = useState(0);
   
-
-    /*if (localStorage.getItem("lastSession") !== null) {
-      for(i = 1; i <= localStorage.getItem("lastSession") ; i++){
-        
-        console.log('dziala')
-        return(
-          <Todoing id={"task" + i} text="1"/>
-        )
-      }
-    }*/
     useEffect(()=>{
 
       
