@@ -4,9 +4,7 @@ import './App.css';
 let i = 1;
 const tableTwo = JSON.parse(localStorage.getItem("names"))
 const tableSave = [...tableTwo]// <- ta tablica zawiera ID kafli i do tego tekst który ją wypełnia
-/*if(JSON.parse(localStorage.getItem("names")) !== null){
-tableSave.push(JSON.parse(localStorage.getItem("names")))
-}*/
+
 
 console.log(tableSave)
 function Todoing(props){
@@ -48,19 +46,7 @@ function Todoing(props){
     }
     const [table, setTable] = useState(1)
     const [text, setText] = useState("Click to change")
-    /*function SetItem(){
-        const obj = [
-            props.id,
-            text,
-            "child"
-    ];
-        
 
-        window.localStorage.setItem("myObject", JSON.stringify(obj));
-        let newObject = window.localStorage.getItem("myObject");
-        console.log(JSON.parse(newObject));
-        console.log(obj[2]);
-    }*/
     
     function handleId(e){
         let OfName = e.currentTarget.parentElement.id
@@ -101,60 +87,6 @@ function Todoing(props){
             document.getElementById('tab-6').appendChild(document.getElementById(OfName))
         } 
         
-        /*if (table === 1){
-        //console.log(document.getElementById(e.currentTarget.id).parentElement);
-        setTable(table + 1)
-        var dziecko = document.getElementById(props.id);
-        document.getElementById('tab-2').appendChild(dziecko);
-        i = 2;
-            let nameOf = dziecko.id
-            let nameOf2 = nameOf.slice(4 , 5);
-            //let indexTable = JSON.parse(localStorage.getItem("names"))
-            indexTable[nameOf2].tab = "2"
-            localStorage.setItem("names", JSON.stringify(indexTable))
-            console.log(nameOf2)
-
-        
-        } else if(table === 2){
-        var dziecko = document.getElementById(props.id);
-        document.getElementById('tab-3').appendChild(dziecko);
-        setTable(table + 1)
-            let nameOf = dziecko.id
-            let nameOf2 = nameOf.slice(4 , 5);
-            let indexTable = JSON.parse(localStorage.getItem("names"))
-            indexTable[nameOf2].tab = "3"
-            localStorage.setItem("names", JSON.stringify(indexTable))
-        }
-        else if(table === 3){
-            var dziecko = document.getElementById(props.id);
-            document.getElementById('tab-4').appendChild(dziecko);
-            setTable(table + 1)
-                let nameOf = dziecko.id
-                let nameOf2 = nameOf.slice(4 , 5);
-                let indexTable = JSON.parse(localStorage.getItem("names"))
-                indexTable[nameOf2].tab = "4"
-                localStorage.setItem("names", JSON.stringify(indexTable))
-            }
-        else if(table === 4){
-            var dziecko = document.getElementById(props.id);
-            document.getElementById('tab-5').appendChild(dziecko);
-            setTable(table + 1)
-                let nameOf = dziecko.id
-                let nameOf2 = nameOf.slice(4 , 5);
-                let indexTable = JSON.parse(localStorage.getItem("names"))
-                indexTable[nameOf2].tab = "5"
-                localStorage.setItem("names", JSON.stringify(indexTable))
-            }
-        else if(table === 5){
-            var dziecko = document.getElementById(props.id);
-            document.getElementById('tab-6').appendChild(dziecko);
-            setTable(table + 1)
-                let nameOf = dziecko.id
-                let nameOf2 = nameOf.slice(4 , 5);
-                let indexTable = JSON.parse(localStorage.getItem("names"))
-                indexTable[nameOf2].tab = "6"
-                localStorage.setItem("names", JSON.stringify(indexTable))
-            }*/
     }
     
     return(<div class="kafel" id={props.id} /*onLoad={SetItem}*/ ><button id="btn-remove" onClick={remove}>X</button><div id="polkafel" onClick={getText}>{props.text}</div><button onClick={handleId} id="btn-push">Got it!</button></div>);
